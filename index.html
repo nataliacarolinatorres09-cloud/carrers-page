@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers | Direct Path Mortgage LLC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0A0A0A;
+    --white:#FFFFFF;
+    --grey-05:#F5F5F5;
+    --grey-15:#E4E4E4;
+    --grey-50:#8A8A8A;
+    --grey-70:#4D4D4D;
+    --max:1100px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--white);
+    color:var(--black);
+    font-family:'Inter',sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    margin:0;
+    letter-spacing:-0.02em;
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--grey-50);
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    padding:24px 0;
+    border-bottom:1px solid var(--black);
+  }
+  header .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  .wordmark{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:19px;
+    letter-spacing:-0.02em;
+  }
+  .header-right{
+    display:flex;align-items:center;gap:18px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    color:var(--grey-70);
+  }
+
+  /* ---------- Path motif: the signature element ---------- */
+  .path-svg{
+    display:block;
+    width:100%;
+    height:auto;
+  }
+  .path-svg .route{
+    fill:none;
+    stroke:var(--black);
+    stroke-width:1.4;
+    stroke-dasharray:4 6;
+  }
+  .path-svg circle{fill:var(--black);}
+  .path-svg .node-label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10px;
+    fill:var(--grey-70);
+    letter-spacing:0.05em;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{padding:88px 0 70px;}
+  .hero-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--black);
+    color:var(--white);
+    padding:7px 14px;
+    border-radius:999px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    margin-bottom:26px;
+  }
+  .hero h1{
+    font-size:clamp(38px,5.4vw,66px);
+    line-height:1.02;
+    max-width:15ch;
+  }
+  .hero p.lede{
+    margin-top:24px;
+    font-size:17.5px;
+    color:var(--grey-70);
+    max-width:52ch;
+  }
+  .hero-ctas{
+    margin-top:36px;
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-block;
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    font-size:14.5px;
+    padding:15px 28px;
+    border-radius:2px;
+    text-decoration:none;
+    transition:background .15s ease, color .15s ease, transform .15s ease;
+    border:1.5px solid var(--black);
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn:focus-visible{outline:2px solid var(--black);outline-offset:3px;}
+  .btn-primary{background:var(--black);color:var(--white);}
+  .btn-primary:hover{background:var(--grey-70);border-color:var(--grey-70);}
+  .btn-ghost{background:var(--white);color:var(--black);}
+  .btn-ghost:hover{background:var(--grey-05);}
+
+  .hero-path-frame{
+    margin-top:56px;
+    border-top:1px solid var(--black);
+    border-bottom:1px solid var(--black);
+    padding:26px 0;
+  }
+
+  /* ---------- Section shells ---------- */
+  section{padding:76px 0;}
+  .section-head{max-width:640px;margin-bottom:44px;}
+  .section-head .eyebrow{margin-bottom:10px;display:block;}
+  .inverse{background:var(--black);color:var(--white);}
+  .inverse .eyebrow{color:var(--grey-15);}
+
+  /* ---------- Why here ---------- */
+  .why-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:0;
+    border-top:1px solid var(--black);
+    border-left:1px solid var(--black);
+  }
+  .why-card{
+    padding:30px 26px 34px;
+    border-right:1px solid var(--black);
+    border-bottom:1px solid var(--black);
+  }
+  .why-card .num{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    color:var(--grey-50);
+    margin-bottom:16px;
+    display:block;
+  }
+  .why-card h3{font-size:19px;margin-bottom:10px;}
+  .why-card p{margin:0;color:var(--grey-70);font-size:14.5px;}
+
+  /* ---------- Roles ---------- */
+  .roles-list{border-top:1px solid var(--grey-15);}
+  .role-row{
+    display:grid;
+    grid-template-columns:2.2fr 1fr 1fr auto;
+    gap:20px;
+    align-items:center;
+    padding:26px 4px;
+    border-bottom:1px solid var(--grey-15);
+    transition:background .15s ease, color .15s ease;
+  }
+  .role-row:hover{background:var(--white);color:var(--black);}
+  .role-row:hover .role-meta{color:var(--grey-70);}
+  .role-row:hover .role-apply{color:var(--black);}
+  .role-row h3{font-size:19px;font-weight:600;}
+  .role-meta{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    color:var(--grey-50);
+    transition:color .15s ease;
+  }
+  .role-apply{
+    justify-self:end;
+    font-size:14px;
+    font-weight:600;
+    text-decoration:none;
+    white-space:nowrap;
+    transition:color .15s ease;
+  }
+  .open-note{
+    margin-top:26px;
+    color:var(--grey-50);
+    font-size:14.5px;
+    max-width:56ch;
+  }
+  .inverse .open-note{color:var(--grey-15);}
+
+  /* ---------- Culture ---------- */
+  .culture-wrap{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:56px;
+    align-items:start;
+  }
+  .culture-list{list-style:none;margin:0;padding:0;}
+  .culture-list li{
+    padding:22px 0;
+    border-bottom:1px solid var(--grey-15);
+    display:grid;
+    grid-template-columns:110px 1fr;
+    gap:18px;
+  }
+  .culture-list li:first-child{border-top:1px solid var(--grey-15);}
+  .culture-list .tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    color:var(--grey-50);
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    padding-top:2px;
+  }
+  .culture-list p{margin:0;font-size:15px;color:var(--grey-70);}
+  .culture-list strong{color:var(--black);font-weight:600;}
+
+  /* ---------- Apply CTA ---------- */
+  .apply-panel{
+    border:1px solid var(--white);
+    padding:56px 44px;
+    display:grid;
+    grid-template-columns:1.3fr auto;
+    align-items:center;
+    gap:30px;
+  }
+  .apply-panel h2{color:var(--white);font-size:32px;margin-bottom:10px;}
+  .apply-panel p{margin:0;color:var(--grey-15);max-width:46ch;font-size:15px;}
+  .apply-panel .btn-primary{background:var(--white);color:var(--black);border-color:var(--white);}
+  .apply-panel .btn-primary:hover{background:var(--grey-15);}
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding:40px 0 34px;
+    border-top:1px solid var(--black);
+  }
+  footer .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+  footer .legal{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    max-width:420px;
+    line-height:1.7;
+    color:var(--grey-50);
+  }
+  .footer-links{
+    display:flex;gap:18px;flex-wrap:wrap;
+    font-size:13px;font-weight:500;
+  }
+  .footer-links a{text-decoration:none;border-bottom:1px solid transparent;}
+  .footer-links a:hover{border-bottom-color:var(--black);}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:860px){
+    .why-grid{grid-template-columns:1fr;}
+    .why-card{border-right:1px solid var(--black);}
+    .role-row{grid-template-columns:1fr;gap:6px;}
+    .role-apply{justify-self:start;}
+    .culture-wrap{grid-template-columns:1fr;}
+    .apply-panel{grid-template-columns:1fr;text-align:left;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="wordmark">DirectPath</div>
+    <div class="header-right">
+      <span>NMLS #2783717</span>
+      <span>·</span>
+      <span>Equal Housing Lender</span>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="hero-tag">Now hiring — Tallahassee, FL</span>
+    <h1>The shortest distance to your next role.</h1>
+    <p class="lede">Direct Path Mortgage is opening a Tallahassee team. We recently converted from a brokerage to a licensed lender, which means underwriting, funding, and closing now happen in-house — under one roof, on one team.</p>
+    <div class="hero-ctas">
+      <a href="#roles" class="btn btn-primary">See open roles</a>
+      <a href="#apply" class="btn btn-ghost">Get in touch</a>
+    </div>
+
+    <div class="hero-path-frame">
+      <svg class="path-svg" viewBox="0 0 1000 90" preserveAspectRatio="none" aria-hidden="true">
+        <path class="route" d="M20 70 L 330 70 L 500 20 L 680 20 L 980 70"></path>
+        <circle cx="20" cy="70" r="4"></circle>
+        <text class="node-label" x="8" y="88">APPLY</text>
+        <circle cx="500" cy="20" r="4"></circle>
+        <text class="node-label" x="470" y="12">INTERVIEW</text>
+        <circle cx="980" cy="70" r="4"></circle>
+        <text class="node-label" x="925" y="88">OFFER</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Why here</span>
+      <h2>A lender's file, not a broker's guess</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="num">01</span>
+        <h3>Full-file control</h3>
+        <p>Underwriting, processing, and closing happen in-house. You can speak to a file's status with certainty instead of chasing a third party for updates.</p>
+      </div>
+      <div class="why-card">
+        <span class="num">02</span>
+        <h3>Built to grow</h3>
+        <p>We're opening the Tallahassee office now — the desk you build and the standards you set become the foundation of how this team runs.</p>
+      </div>
+      <div class="why-card">
+        <span class="num">03</span>
+        <h3>Real support</h3>
+        <p>Warm and self-generated leads, an in-house ops team, and pricing you can actually explain to a borrower on the first call.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="inverse" id="roles">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Open roles</span>
+      <h2>Tallahassee, FL</h2>
+    </div>
+    <div class="roles-list">
+      <div class="role-row">
+        <h3>Loan Officer</h3>
+        <span class="role-meta">Production</span>
+        <span class="role-meta">Tallahassee, FL</span>
+        <a href="mailto:careers@directpathmortgage.com?subject=Loan%20Officer%20Application%20-%20Tallahassee" class="role-apply">Apply →</a>
+      </div>
+      <div class="role-row">
+        <h3>Phone Sales Representative</h3>
+        <span class="role-meta">Inside Sales</span>
+        <span class="role-meta">Tallahassee, FL</span>
+        <a href="mailto:careers@directpathmortgage.com?subject=Phone%20Sales%20Application%20-%20Tallahassee" class="role-apply">Apply →</a>
+      </div>
+    </div>
+    <p class="open-note">Don't see your role? We're a young lender adding headcount often in Tallahassee. Send your resume and the position you're built for — we read every one.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="culture-wrap">
+      <div class="section-head" style="margin-bottom:0;">
+        <span class="eyebrow">How we work</span>
+        <h2>What you can expect on the desk</h2>
+      </div>
+      <ul class="culture-list">
+        <li>
+          <span class="tag">Files</span>
+          <p><strong>You'll know where a file stands</strong> because your team is the one moving it — no waiting on an outside lender's queue.</p>
+        </li>
+        <li>
+          <span class="tag">Product</span>
+          <p><strong>A real product set to sell</strong> — purchase, refinance, HELOC, and VA, backed by pricing you can quote with confidence.</p>
+        </li>
+        <li>
+          <span class="tag">Coaching</span>
+          <p><strong>Scripts and systems, not sink-or-swim</strong> — phone sales and LO roles are trained and coached, not thrown a lead list on day one.</p>
+        </li>
+        <li>
+          <span class="tag">Growth</span>
+          <p><strong>Early means input</strong> — the standards you help set now are the ones the Tallahassee team scales on.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="inverse" id="apply">
+  <div class="wrap">
+    <div class="apply-panel">
+      <div>
+        <h2>Tell us about you</h2>
+        <p>Send a resume and a couple of lines about what you're looking for. We reply to every serious inquiry.</p>
+      </div>
+      <a href="mailto:careers@directpathmortgage.com?subject=Career%20Inquiry" class="btn btn-primary">Email careers@directpathmortgage.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="wordmark" style="margin-bottom:14px;">DirectPath</div>
+      <p class="legal">Direct Path Mortgage LLC · NMLS #2783717<br>
+      2100 Ponce de Leon Blvd, Coral Gables, FL 33134<br>
+      Equal Housing Lender. This page is for general recruitment purposes and does not constitute an offer of employment or credit.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.directpathmortgage.com/about">About</a>
+      <a href="https://www.directpathmortgage.com/contact">Contact</a>
+      <a href="https://www.directpathmortgage.com/legal/licensing">Licensing</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
